@@ -1,0 +1,57 @@
+$error-color: #dc143c;
+$warning-color: #ff8c00;
+$default-color: #6495ed;
+
+.error {
+  border: 1px solid $error-color;
+  background: rgba($error-color, 0.15);
+  svg {
+    color: darken($error-color, 10);
+  }
+}
+
+.warning {
+  border: 1px solid $warning-color;
+  background: rgba($warning-color, 0.15);
+  svg {
+    color: darken($warning-color, 10);
+  }
+}
+
+.default {
+  border: 1px solid $default-color;
+  background: rgba($default-color, 0.15);
+  svg {
+    color: darken($default-color, 10);
+  }
+}
+
+@mixin alpha-bg($transparency) {
+  background-image: linear-gradient(
+    335deg,
+    rgba(27, 167, 168, $transparency) 0%,
+    rgba(52, 141, 191, $transparency) 40%,
+    rgba(110, 65, 199, $transparency) 100%
+  );
+}
+
+@mixin flex-box(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $flex: 1
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex: $flex;
+}
+
+@mixin width-wrapper($name) {
+  .#{$name}-width-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    @content;
+  }
+}

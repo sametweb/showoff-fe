@@ -1,0 +1,8 @@
+.error-wrapper {
+  @include flex-box($justify: flex-start, $align: center);
+  padding: 1rem;
+  border-radius: 5px;
+  svg {
+    margin: 0 2rem 0 0;
+  }
+}
